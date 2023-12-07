@@ -12,15 +12,29 @@ namespace Calculator
         {
             Console.WriteLine("The is calculator");
 
-            Console.WriteLine("Какой оператор хотите использовать? ");
+
+            Console.Write("Нажми на Enter, чтобы показать доступные арифмитические операции.");
+            Console.ReadLine();
+
+
+            Console.WriteLine();
             Console.WriteLine("Сложение: +");
             Console.WriteLine("Вычитание: -");
             Console.WriteLine("Деление: /");
             Console.WriteLine("Умножение: *");
 
-            
+            Console.WriteLine();
+            Console.WriteLine("Нажми на Enter,чтобы продолжить");
+            Console.ReadLine();
 
+            Console.WriteLine();
+            Console.WriteLine("Какую арифмитичсекую операцию хотите использовать? ");
+
+
+
+            
             string oper = Console.ReadLine();
+            Console.WriteLine();
 
             switch (oper)
             {
@@ -37,6 +51,7 @@ namespace Calculator
                     }
                     break;
 
+
                 case "-":
                     {
                         Console.Write("Вычитание. Введи первое число: ");
@@ -47,6 +62,7 @@ namespace Calculator
                         Console.WriteLine("Вывод: " + c);
                     }
                     break;
+
 
                 case "*":
                     {
@@ -59,6 +75,7 @@ namespace Calculator
                     }
                     break;
 
+
                 case "/":
                     {
                         Console.Write("Деление. Введи первое число: ");
@@ -70,7 +87,17 @@ namespace Calculator
                     }
                     break;
 
+
+                default:
+                    {
+                        Console.WriteLine("Ты не ввел один оператор из четырёх оператора,перезапусти");
+                    }
+                    break;
+
             }
+
+            Console.WriteLine("Нажми на Enter что-бы выйти");
+            Console.ReadLine();
         }
     }
 }
