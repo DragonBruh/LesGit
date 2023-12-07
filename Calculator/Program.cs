@@ -18,13 +18,58 @@ namespace Calculator
             Console.WriteLine("Деление: /");
             Console.WriteLine("Умножение: *");
 
+            
+
             string oper = Console.ReadLine();
 
             switch (oper)
             {
                 case "+":
-                    Console.WriteLine("Введи первое число");
-                    int a = Convert.ToInt32(Console.ReadLine())
+                    {
+                        Console.Write("Сложение. Введи первое число: ");
+                        int a = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Введи второе число: ");
+                        int b = Convert.ToInt32(Console.ReadLine());
+                        int c = a + b;
+                        Console.WriteLine("Вывод: " + c);
+
+
+                    }
+                    break;
+
+                case "-":
+                    {
+                        Console.Write("Вычитание. Введи первое число: ");
+                        int a = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Введи второе число: ");
+                        int b = Convert.ToInt32(Console.ReadLine());
+                        int c = a - b;
+                        Console.WriteLine("Вывод: " + c);
+                    }
+                    break;
+
+                case "*":
+                    {
+                        Console.Write("Умножение. Введи первое число: ");
+                        int a = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Введи второе число: ");
+                        int b = Convert.ToInt32(Console.ReadLine());
+                        int c = a * b;
+                        Console.WriteLine("Вывод: " + c);
+                    }
+                    break;
+
+                case "/":
+                    {
+                        Console.Write("Деление. Введи первое число: ");
+                        int a = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Введи второе число: ");
+                        int b = Convert.ToInt32(Console.ReadLine());
+                        int c = a / b;
+                        Console.WriteLine("Вывод: " + c);
+                    }
+                    break;
+
             }
         }
     }
