@@ -10,6 +10,22 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("The is calculator");
+
+            Console.WriteLine("Какой оператор хотите использовать? ");
+            Console.WriteLine("Сложение: +");
+            Console.WriteLine("Вычитание: -");
+            Console.WriteLine("Деление: /");
+            Console.WriteLine("Умножение: *");
+
+            string oper = Console.ReadLine();
+
+            switch (oper)
+            {
+                case "+":
+                    Console.WriteLine("Введи первое число");
+                    int a = Convert.ToInt32(Console.ReadLine())
+            }
         }
     }
 }
