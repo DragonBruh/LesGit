@@ -98,6 +98,7 @@ namespace Calculator
 
             Console.WriteLine("Нажми на Enter что-бы выйти");
             Console.ReadLine();
+
         }
     }
 }
