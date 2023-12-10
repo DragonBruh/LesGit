@@ -10,95 +10,116 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("The is calculator");
-
-
-            Console.Write("Нажми на Enter, чтобы показать доступные арифмитические операции.");
-            Console.ReadLine();
-
-
-            Console.WriteLine();
-            Console.WriteLine("Сложение: +");
-            Console.WriteLine("Вычитание: -");
-            Console.WriteLine("Деление: /");
-            Console.WriteLine("Умножение: *");
-
-            Console.WriteLine();
-            Console.WriteLine("Нажми на Enter,чтобы продолжить");
-            Console.ReadLine();
-
-            Console.WriteLine();
-            Console.WriteLine("Какую арифмитичсекую операцию хотите использовать? ");
-
-
-
-            
-            string oper = Console.ReadLine();
+            Console.WriteLine("Калькулятор");
             Console.WriteLine();
 
-            switch (oper)
+            Console.Write("Доступные арифмитические операции: ");
+
+            while (true)
             {
-                case "+":
-                    {
-                        Console.Write("Сложение. Введи первое число: ");
-                        int a = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("Введи второе число: ");
-                        int b = Convert.ToInt32(Console.ReadLine());
-                        int c = a + b;
-                        Console.WriteLine("Вывод: " + c);
+                Console.WriteLine("+    -   *   /");
+                Console.Write("Введи арифмитическую операцию: ");
 
+                string operand = Console.ReadLine(); //ввод арифмитичской операции
+                Console.Clear();
+
+                try //В случаи ошибки,если вместо цифр ввести что-то иное, то программа не вылетит
+                {
+                    switch (operand) // + or - or / or *
+                    {
+                        case "+":
+                            {
+                                Console.Write("Введи первое число: "); //первый операнд
+                                double fis = Convert.ToDouble(Console.ReadLine());
+                                Console.WriteLine();
+
+                                Console.Write("Введи второе число: "); //второй операнд
+                                double tws = Convert.ToDouble(Console.ReadLine());
+                                Console.Clear();
+
+                                Console.WriteLine($"{fis} + {tws} = {fis + tws}");
+                                Console.ReadLine();
+                                Console.Clear();
+                                break;
+                            }
+
+                        case "-":
+                            {
+                                Console.Write("Введи первое число: "); //первый операнд
+                                double fis = Convert.ToDouble(Console.ReadLine());
+                                Console.WriteLine();
+
+                                Console.Write("Введи второе число: "); //второй операнд
+                                double tws = Convert.ToDouble(Console.ReadLine());
+                                Console.Clear();
+
+                                Console.WriteLine($"{fis} - {tws} = {fis - tws}");
+                                Console.ReadLine();
+                                Console.Clear();
+                                break;
+                            }
+
+                        case "*":
+                            {
+                                Console.Write("Введи первое число: "); //первый операнд
+                                double fis = Convert.ToDouble(Console.ReadLine());
+                                Console.WriteLine();
+
+                                Console.Write("Введи второе число: "); //второй операнд
+                                double tws = Convert.ToDouble(Console.ReadLine());
+                                Console.Clear();
+
+                                Console.WriteLine($"{fis} * {tws} = {fis * tws}");
+                                Console.ReadLine();
+                                Console.Clear();
+                                break;
+                            }
+
+                        case "/":
+                            {
+                                Console.Write("Введи первое число: "); //первый операнд
+                                double fis = Convert.ToDouble(Console.ReadLine());
+                                Console.WriteLine();
+
+                                Console.Write("Введи второе число: "); //второй операнд
+                                double tws = Convert.ToDouble(Console.ReadLine());
+                                Console.Clear();
+
+                                if (tws == 0) //деление на ноль
+                                {
+                                    Console.WriteLine("Машина смеется над тобою,ведь на ноль делить нельзя");
+                                    Console.ReadLine();
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"{fis} / {tws} = {fis / tws}");
+                                    Console.ReadLine();
+                                }
+
+                                Console.Clear();
+                                break;
+                            }
+
+                        default:
+                            {
+                                Console.WriteLine("Машина тебя не понимает.");
+                                Console.ReadLine();
+                                Console.Clear();
+                                break;
+                            }
 
                     }
-                    break;
-
-
-                case "-":
-                    {
-                        Console.Write("Вычитание. Введи первое число: ");
-                        int a = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("Введи второе число: ");
-                        int b = Convert.ToInt32(Console.ReadLine());
-                        int c = a - b;
-                        Console.WriteLine("Вывод: " + c);
-                    }
-                    break;
-
-
-                case "*":
-                    {
-                        Console.Write("Умножение. Введи первое число: ");
-                        int a = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("Введи второе число: ");
-                        int b = Convert.ToInt32(Console.ReadLine());
-                        int c = a * b;
-                        Console.WriteLine("Вывод: " + c);
-                    }
-                    break;
-
-
-                case "/":
-                    {
-                        Console.Write("Деление. Введи первое число: ");
-                        int a = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("Введи второе число: ");
-                        int b = Convert.ToInt32(Console.ReadLine());
-                        int c = a / b;
-                        Console.WriteLine("Вывод: " + c);
-                    }
-                    break;
-
-
-                default:
-                    {
-                        Console.WriteLine("Ты не ввел один оператор из четырёх оператора,перезапусти");
-                    }
-                    break;
-
+                }
+                catch (Exception error)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Машина тебя не понимает.");
+                    Console.WriteLine("Ты ввел не число.");
+                    Console.WriteLine(error.Message);
+                    Console.ReadLine();
+                    Console.Clear();
+                }
             }
-
-            Console.WriteLine("Нажми на Enter что-бы выйти");
-            Console.ReadLine();
-
         }
     }
 }
